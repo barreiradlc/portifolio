@@ -14,6 +14,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { FilmeProvider } from '../providers/filme/filme';
 
 import { HttpModule } from '@angular/http';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+import { LoginPage } from '../pages/login/login';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FIREBASE_CONFIG } from './app.firebase.config';
+
 
 @NgModule({
   declarations: [
@@ -21,12 +29,18 @@ import { HttpModule } from '@angular/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    CadastroPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    // AngularFireDatabase,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +48,9 @@ import { HttpModule } from '@angular/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    CadastroPage
   ],
   providers: [
     StatusBar,
