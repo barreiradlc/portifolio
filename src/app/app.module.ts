@@ -16,9 +16,10 @@ import { FilmeProvider } from '../providers/filme/filme';
 import { HttpModule } from '@angular/http';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { LoginPage } from '../pages/login/login';
+import { PerfilPage } from '../pages/perfil/perfil';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 
@@ -31,7 +32,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     HomePage,
     TabsPage,
     LoginPage,
-    CadastroPage
+    CadastroPage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -50,12 +52,14 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
     HomePage,
     TabsPage,
     LoginPage,
-    CadastroPage
+    CadastroPage,
+    PerfilPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     FilmeProvider,
+    AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-navbar>
     <ion-title>
@@ -7,5 +8,22 @@
 </ion-header>
 
 <ion-content padding>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item class="text" *ngFor="let item of items | async">
+			{{item | json}}
+		</ion-item>
+	</ion-list>
+</ion-content>
+  <!--
+  <p>Foto: {{(perfilData | async)?.foto}}</p>
+  <p>Nome: {{(perfilData | async)?.nome}}</p>
+  <p>Sobrenome: {{(perfilData | async)?.sobrenome}}</p>
+  -->
+
+ 
+ <button ion-fab><ion-icon name="create" (click)="editarPerfil()"></ion-icon></button>
 
 </ion-content>
